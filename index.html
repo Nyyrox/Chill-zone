@@ -430,64 +430,149 @@
         }
         .service-book-btn:hover { background: #000; transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,0.15); }
 
-        /* ====== REVIEWS ====== */
-        #reviews { background: var(--bg-white); padding-bottom: 130px; }
-        .reviews-hero { display: flex; flex-direction: column; align-items: center; margin-bottom: 56px; }
-        .reviews-rating-big { display: flex; align-items: center; gap: 20px; margin-bottom: 16px; }
-        .rating-number-big { font-family: var(--font-heading); font-size: 64px; font-weight: 900; color: var(--black); line-height: 1; letter-spacing: -1px; }
-        .rating-stars-big .stars { display: flex; gap: 4px; }
-        .rating-stars-big .stars i { font-size: 22px; color: var(--gold); }
-        .rating-stars-big .review-count { font-size: 13px; color: var(--text-secondary); font-weight: 500; margin-top: 4px; }
-        .google-badge {
-            display: inline-flex; align-items: center; gap: 8px;
-            padding: 8px 20px; background: var(--gray-100); border: 1px solid var(--border-card);
-            border-radius: 50px; font-size: 13px; color: var(--text-secondary); font-weight: 600;
-        }
-        .reviews-grid {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 28px;
+        /* ====== GALLERY ====== */
+        #gallery { background: var(--bg-white); padding-bottom: 130px; }
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 20px;
             max-width: 1140px;
             margin: 0 auto;
         }
-        .review-card {
-            flex: 0 1 calc(33.333% - 28px);
-            min-width: 280px;
-            max-width: 360px;
-            background: var(--bg-card);
-            border: 1px solid var(--border-card);
-            border-radius: 20px;
-            padding: 32px 28px;
+        .gallery-item {
+            position: relative;
+            border-radius: 18px;
+            overflow: hidden;
+            aspect-ratio: 4/3;
+            background: #080c14;
+            cursor: pointer;
             box-shadow: var(--shadow-card);
-            transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
+            border: 1px solid var(--border-card);
+            transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
         }
-        .review-card:hover { border-color: var(--border-card-hover); transform: translateY(-4px); box-shadow: var(--shadow-card-hover); }
-        .review-header { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
-        .review-avatar {
-            width: 44px; height: 44px; border-radius: 50%; background: var(--black);
-            display: flex; align-items: center; justify-content: center;
-            font-family: var(--font-heading); font-weight: 700; font-size: 16px; color: #fff; flex-shrink: 0;
+        .gallery-item:hover {
+            transform: translateY(-6px) scale(1.02);
+            box-shadow: 0 16px 36px rgba(0,0,0,0.16);
+            border-color: var(--black);
         }
-        .review-author { font-family: var(--font-heading); font-weight: 600; font-size: 15px; }
-        .review-meta { display: flex; align-items: center; gap: 6px; margin-top: 2px; }
-        .review-stars { display: flex; gap: 2px; }
-        .review-stars i { font-size: 12px; color: var(--gold); }
-        .review-date { font-size: 12px; color: var(--text-muted); }
-        .review-text { font-size: 14px; color: var(--text-secondary); line-height: 1.7; }
-        .review-text::before { content:'\201C'; font-size: 24px; color: var(--gray-300); font-family: Georgia, serif; line-height: 0; vertical-align: -6px; margin-right: 4px; }
-        .reviews-cta { text-align: center; margin-top: 56px; }
-        .btn-outline {
-            display: inline-flex; align-items: center; gap: 8px;
-            padding: 13px 28px; background: transparent; color: var(--text-primary);
-            font-family: var(--font-heading); font-weight: 600; font-size: 13px;
-            border-radius: 50px; border: 1.5px solid var(--gray-300); cursor: pointer;
-            transition: transform 0.2s, border-color 0.3s, background 0.3s;
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
         }
-        .btn-outline:hover { transform: translateY(-2px); border-color: var(--black); background: var(--gray-100); }
+        .gallery-item:hover img {
+            transform: scale(1.08);
+        }
+        .gallery-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.75) 0%, transparent 60%);
+            display: flex;
+            align-items: flex-end;
+            padding: 16px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+        .gallery-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 6px 14px;
+            background: rgba(255,255,255,0.92);
+            backdrop-filter: blur(8px);
+            border-radius: 50px;
+            color: var(--black);
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        /* Lightbox */
+        .lightbox-modal {
+            position: fixed;
+            inset: 0;
+            z-index: 100000;
+            background: rgba(0, 0, 0, 0.92);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+            padding: 24px;
+        }
+        .lightbox-modal.active {
+            opacity: 1;
+            visibility: visible;
+            pointer-events: auto;
+        }
+        .lightbox-content {
+            max-width: 90vw;
+            max-height: 85vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .lightbox-content img {
+            max-width: 100%;
+            max-height: 85vh;
+            object-fit: contain;
+            border-radius: 14px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.8);
+        }
+        .lightbox-close {
+            position: absolute;
+            top: 24px;
+            right: 28px;
+            background: none;
+            border: none;
+            color: #fff;
+            font-size: 38px;
+            cursor: pointer;
+            line-height: 1;
+            opacity: 0.8;
+            transition: opacity 0.2s, transform 0.2s;
+        }
+        .lightbox-close:hover { opacity: 1; transform: scale(1.15); }
+        .lightbox-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.15);
+            border: 1px solid rgba(255,255,255,0.3);
+            color: #fff;
+            font-size: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.2s;
+        }
+        .lightbox-nav:hover { background: rgba(255,255,255,0.3); transform: translateY(-50%) scale(1.1); }
+        .lightbox-nav.prev { left: 24px; }
+        .lightbox-nav.next { right: 24px; }
+        @media (max-width: 768px) {
+            .gallery-grid { grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 12px; }
+            .gallery-item { border-radius: 14px; }
+            .lightbox-nav { width: 40px; height: 40px; font-size: 14px; }
+            .lightbox-nav.prev { left: 12px; }
+            .lightbox-nav.next { right: 12px; }
+        }
+
+        /* ====== REVIEWS ====== */
+        #reviews { background: var(--bg-section); padding-bottom: 130px; }
 
         /* ====== CONTACT ====== */
-        #contact { background: var(--bg-section); padding-bottom: 140px; }
+        #contact { background: var(--bg-white); padding-bottom: 140px; }
         .contact-wrapper { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; max-width: 1080px; margin: 0 auto; }
         .contact-info { display: flex; flex-direction: column; gap: 24px; }
         .contact-info h3 { font-family: var(--font-heading); font-size: 26px; font-weight: 700; margin-bottom: 4px; }
@@ -645,6 +730,7 @@
         <ul class="nav-links" id="nav-links">
             <li><a href="#about">About</a></li>
             <li><a href="#services">Services</a></li>
+            <li><a href="#gallery">Gallery</a></li>
             <li><a href="#reviews">Reviews</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
@@ -844,6 +930,102 @@
         </div>
     </section>
 
+    <!-- GALLERY -->
+    <section id="gallery" class="section">
+        <div class="section-header reveal">
+            <p class="section-label">Real Work Highlights</p>
+            <h2 class="section-title">Our Service & Work Gallery</h2>
+            <p class="section-desc">Explore real snapshots of doorstep AC repair, deep jet-pump servicing, PCB diagnostics, and installations completed across Muzaffarpur.</p>
+        </div>
+
+        <div class="gallery-grid reveal">
+            <div class="gallery-item" data-src="Gallery/6102624597900464745.jpg">
+                <img src="Gallery/6102624597900464745.jpg" alt="AC Servicing Muzaffarpur" loading="lazy">
+                <div class="gallery-overlay">
+                    <div class="gallery-tag"><i class="fas fa-search-plus"></i> View Image</div>
+                </div>
+            </div>
+            <div class="gallery-item" data-src="Gallery/6102624597900464746.jpg">
+                <img src="Gallery/6102624597900464746.jpg" alt="Doorstep AC Repair" loading="lazy">
+                <div class="gallery-overlay">
+                    <div class="gallery-tag"><i class="fas fa-search-plus"></i> View Image</div>
+                </div>
+            </div>
+            <div class="gallery-item" data-src="Gallery/6102624597900464747.jpg">
+                <img src="Gallery/6102624597900464747.jpg" alt="Jet-Pump Deep Wash" loading="lazy">
+                <div class="gallery-overlay">
+                    <div class="gallery-tag"><i class="fas fa-search-plus"></i> View Image</div>
+                </div>
+            </div>
+            <div class="gallery-item" data-src="Gallery/6102624597900464748.jpg">
+                <img src="Gallery/6102624597900464748.jpg" alt="Outdoor Unit Servicing" loading="lazy">
+                <div class="gallery-overlay">
+                    <div class="gallery-tag"><i class="fas fa-search-plus"></i> View Image</div>
+                </div>
+            </div>
+            <div class="gallery-item" data-src="Gallery/6102624597900464749.jpg">
+                <img src="Gallery/6102624597900464749.jpg" alt="Gas Refilling & Leak Check" loading="lazy">
+                <div class="gallery-overlay">
+                    <div class="gallery-tag"><i class="fas fa-search-plus"></i> View Image</div>
+                </div>
+            </div>
+            <div class="gallery-item" data-src="Gallery/6102624597900464750.jpg">
+                <img src="Gallery/6102624597900464750.jpg" alt="Precision AC Installation" loading="lazy">
+                <div class="gallery-overlay">
+                    <div class="gallery-tag"><i class="fas fa-search-plus"></i> View Image</div>
+                </div>
+            </div>
+            <div class="gallery-item" data-src="Gallery/6102624597900464751.jpg">
+                <img src="Gallery/6102624597900464751.jpg" alt="AC Cooling Coil Cleaning" loading="lazy">
+                <div class="gallery-overlay">
+                    <div class="gallery-tag"><i class="fas fa-search-plus"></i> View Image</div>
+                </div>
+            </div>
+            <div class="gallery-item" data-src="Gallery/6102624597900464752.jpg">
+                <img src="Gallery/6102624597900464752.jpg" alt="Compressor Diagnostics" loading="lazy">
+                <div class="gallery-overlay">
+                    <div class="gallery-tag"><i class="fas fa-search-plus"></i> View Image</div>
+                </div>
+            </div>
+            <div class="gallery-item" data-src="Gallery/6102624597900464753.jpg">
+                <img src="Gallery/6102624597900464753.jpg" alt="Expert Technician at Work" loading="lazy">
+                <div class="gallery-overlay">
+                    <div class="gallery-tag"><i class="fas fa-search-plus"></i> View Image</div>
+                </div>
+            </div>
+            <div class="gallery-item" data-src="Gallery/6102624597900464754.jpg">
+                <img src="Gallery/6102624597900464754.jpg" alt="Doorstep Service Visit" loading="lazy">
+                <div class="gallery-overlay">
+                    <div class="gallery-tag"><i class="fas fa-search-plus"></i> View Image</div>
+                </div>
+            </div>
+            <div class="gallery-item" data-src="Gallery/6102624597900464755.jpg">
+                <img src="Gallery/6102624597900464755.jpg" alt="AC Deep Cleaning Complete" loading="lazy">
+                <div class="gallery-overlay">
+                    <div class="gallery-tag"><i class="fas fa-search-plus"></i> View Image</div>
+                </div>
+            </div>
+            <div class="gallery-item" data-src="Gallery/6102624597900464756.jpg">
+                <img src="Gallery/6102624597900464756.jpg" alt="Chill Zone AC Repair Work" loading="lazy">
+                <div class="gallery-overlay">
+                    <div class="gallery-tag"><i class="fas fa-search-plus"></i> View Image</div>
+                </div>
+            </div>
+            <div class="gallery-item" data-src="Gallery/6102624597900464757.jpg">
+                <img src="Gallery/6102624597900464757.jpg" alt="High Quality AC Repair" loading="lazy">
+                <div class="gallery-overlay">
+                    <div class="gallery-tag"><i class="fas fa-search-plus"></i> View Image</div>
+                </div>
+            </div>
+            <div class="gallery-item" data-src="Gallery/6102624597900464758.jpg">
+                <img src="Gallery/6102624597900464758.jpg" alt="Muzaffarpur Doorstep Service" loading="lazy">
+                <div class="gallery-overlay">
+                    <div class="gallery-tag"><i class="fas fa-search-plus"></i> View Image</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- REVIEWS -->
     <section id="reviews" class="section">
         <div class="section-header reveal">
@@ -904,13 +1086,23 @@
     <footer class="footer">
         <div class="footer-top">
             <div class="footer-brand"><img src="logo image to be used.jpg" alt="Chill Zone"><div class="footer-brand-info"><h4>Chill Zone AC Repair Services</h4><p>Best AC Repair in Muzaffarpur, Bihar</p></div></div>
-            <div class="footer-links"><a href="#about">About</a><a href="#services">Services</a><a href="#reviews">Reviews</a><a href="#contact">Contact</a></div>
+            <div class="footer-links"><a href="#about">About</a><a href="#services">Services</a><a href="#gallery">Gallery</a><a href="#reviews">Reviews</a><a href="#contact">Contact</a></div>
         </div>
         <div class="footer-bottom"><p>&copy; 2025 Chill Zone AC Repair Services In Muzaffarpur. All rights reserved.</p></div>
     </footer>
 
     <!-- WHATSAPP FLOAT -->
     <a href="https://wa.me/918651726130?text=Hi%20Chill%20Zone%2C%20I%20need%20AC%20repair%20service" target="_blank" class="whatsapp-float" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+
+    <!-- LIGHTBOX MODAL -->
+    <div id="gallery-lightbox" class="lightbox-modal">
+        <button class="lightbox-close" id="lightbox-close" aria-label="Close">&times;</button>
+        <button class="lightbox-nav prev" id="lightbox-prev" aria-label="Previous"><i class="fas fa-chevron-left"></i></button>
+        <div class="lightbox-content">
+            <img id="lightbox-img" src="" alt="Gallery Preview">
+        </div>
+        <button class="lightbox-nav next" id="lightbox-next" aria-label="Next"><i class="fas fa-chevron-right"></i></button>
+    </div>
 
     <script>
     (function() {
@@ -1083,6 +1275,48 @@
             navToggle.classList.remove('open');
             navbar.classList.remove('menu-open');
         }));
+
+        // ====== GALLERY LIGHTBOX ======
+        const galleryItems = Array.from(document.querySelectorAll('.gallery-item'));
+        const lightbox = document.getElementById('gallery-lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+        const lightboxClose = document.getElementById('lightbox-close');
+        const lightboxPrev = document.getElementById('lightbox-prev');
+        const lightboxNext = document.getElementById('lightbox-next');
+        let currentImgIndex = 0;
+
+        function showLightbox(index) {
+            if (index < 0) index = galleryItems.length - 1;
+            if (index >= galleryItems.length) index = 0;
+            currentImgIndex = index;
+            const src = galleryItems[currentImgIndex].getAttribute('data-src');
+            lightboxImg.src = src;
+            lightbox.classList.add('active');
+        }
+
+        function closeLightbox() {
+            lightbox.classList.remove('active');
+            lightboxImg.src = '';
+        }
+
+        galleryItems.forEach((item, idx) => {
+            item.addEventListener('click', () => showLightbox(idx));
+        });
+
+        lightboxClose.addEventListener('click', closeLightbox);
+        lightboxPrev.addEventListener('click', (e) => { e.stopPropagation(); showLightbox(currentImgIndex - 1); });
+        lightboxNext.addEventListener('click', (e) => { e.stopPropagation(); showLightbox(currentImgIndex + 1); });
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox || e.target.classList.contains('lightbox-content')) {
+                closeLightbox();
+            }
+        });
+        document.addEventListener('keydown', (e) => {
+            if (!lightbox.classList.contains('active')) return;
+            if (e.key === 'Escape') closeLightbox();
+            if (e.key === 'ArrowLeft') showLightbox(currentImgIndex - 1);
+            if (e.key === 'ArrowRight') showLightbox(currentImgIndex + 1);
+        });
 
         // ====== SCROLL REVEAL ======
         const obs = new IntersectionObserver(entries => {
