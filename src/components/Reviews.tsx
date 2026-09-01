@@ -87,9 +87,9 @@ export const Reviews: React.FC = () => {
         </div>
       </div>
 
-      <div className="reviews-grid">
+      <div className="reviews-grid reveal-stagger">
         {reviewsData.map((rev) => (
-          <div className="review-card reveal" key={rev.id}>
+          <div className="review-card" key={rev.id}>
             <div className="review-header">
               <div className="review-avatar">{rev.avatar}</div>
               <div>

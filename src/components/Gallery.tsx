@@ -61,7 +61,7 @@ export const Gallery: React.FC = () => {
         </p>
       </div>
 
-      <div className="gallery-grid reveal">
+      <div className="gallery-grid reveal-stagger">
         {galleryImages.map((img, index) => (
           <div
             className="gallery-item"

@@ -87,13 +87,22 @@ export const HeroCanvas: React.FC = () => {
       return Math.max(0, Math.min(1, -rect.top / total));
     }
 
+    let smoothProgress = 0;
+
     function render() {
       if (!allImagesLoaded) {
         animationFrameId = requestAnimationFrame(render);
         return;
       }
 
-      const p = getProgress();
+      const targetP = getProgress();
+      // Smooth lerp (0.09) so fast scrolling glides smoothly and never snaps abruptly
+      smoothProgress += (targetP - smoothProgress) * 0.09;
+      if (Math.abs(targetP - smoothProgress) < 0.0005) {
+        smoothProgress = targetP;
+      }
+
+      const p = smoothProgress;
       const fi = Math.min(FRAME_COUNT - 1, Math.floor(p * (FRAME_COUNT - 1)));
 
       if (fi !== currentFrame) {
@@ -101,11 +110,11 @@ export const HeroCanvas: React.FC = () => {
         drawFrame(images[fi]);
       }
 
-      // Slide opacities
-      const o1 = computeSlideOpacity(p, -0.10, 0.00, 0.15, 0.23);
-      const o2 = computeSlideOpacity(p, 0.18, 0.26, 0.40, 0.48);
-      const o3 = computeSlideOpacity(p, 0.43, 0.51, 0.65, 0.73);
-      const o4 = computeSlideOpacity(p, 0.68, 0.76, 0.90, 0.98);
+      // Slide opacities with smooth cross-fade
+      const o1 = computeSlideOpacity(p, -0.10, 0.00, 0.16, 0.24);
+      const o2 = computeSlideOpacity(p, 0.20, 0.28, 0.42, 0.50);
+      const o3 = computeSlideOpacity(p, 0.46, 0.54, 0.68, 0.76);
+      const o4 = computeSlideOpacity(p, 0.72, 0.80, 0.92, 0.99);
 
       setSlideOpacities({
         slide1: o1,

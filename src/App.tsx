@@ -23,7 +23,7 @@ export const App: React.FC = () => {
       { threshold: 0.08, rootMargin: '0px 0px -20px 0px' }
     );
 
-    document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+    document.querySelectorAll('.reveal, .reveal-stagger').forEach((el) => observer.observe(el));
 
     // Smooth Anchor Scroll Offset
     const handleAnchorClick = (e: MouseEvent) => {

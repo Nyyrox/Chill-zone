@@ -63,9 +63,9 @@ export const Services: React.FC = () => {
         </p>
       </div>
 
-      <div className="services-grid">
+      <div className="services-grid reveal-stagger">
         {servicesData.map((service) => (
-          <div className="service-card reveal" key={service.id}>
+          <div className="service-card" key={service.id}>
             <div className="service-icon">
               <i className={service.icon}></i>
             </div>
