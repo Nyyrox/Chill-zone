@@ -18,6 +18,9 @@ const galleryImages = [
 
 export const Gallery: React.FC = () => {
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
+  const [showAll, setShowAll] = useState<boolean>(false);
+
+  const visibleImages = showAll ? galleryImages : galleryImages.slice(0, 4);
 
   const openLightbox = (index: number) => {
     setSelectedIndex(index);
@@ -62,7 +65,7 @@ export const Gallery: React.FC = () => {
       </div>
 
       <div className="gallery-grid reveal-stagger">
-        {galleryImages.map((img, index) => (
+        {visibleImages.map((img, index) => (
           <div
             className="gallery-item"
             key={img.id}
@@ -76,6 +79,16 @@ export const Gallery: React.FC = () => {
             </div>
           </div>
         ))}
+      </div>
+
+      <div className="gallery-cta reveal">
+        <button
+          className="btn-outline"
+          onClick={() => setShowAll((prev) => !prev)}
+        >
+          <i className={`fas ${showAll ? 'fa-chevron-up' : 'fa-th-large'}`}></i>{' '}
+          {showAll ? 'Show Less' : `Browse All Photos (${galleryImages.length})`}
+        </button>
       </div>
 
       {/* Lightbox Modal */}

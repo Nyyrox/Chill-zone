@@ -771,6 +771,10 @@ img {
     font-size: 12px;
     font-weight: 600;
 }
+.gallery-cta {
+    text-align: center;
+    margin-top: 44px;
+}
 
 /* Lightbox */
 .lightbox-modal {
