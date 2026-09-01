@@ -863,9 +863,24 @@
             const iR = img.naturalWidth / img.naturalHeight;
             const cR = cW / cH;
             let dW, dH, dX, dY;
-            if (cR > iR) { dW = cW; dH = cW / iR; dX = 0; dY = (cH - dH) / 2; }
-            else { dH = cH; dW = cH * iR; dX = (cW - dW) / 2; dY = 0; }
-            ctx.clearRect(0, 0, cW, cH);
+
+            // On mobile portrait screens (cR < iR), fit width so the entire AC unit & disassembly parts are 100% visible with zero side-cropping
+            if (cR <= iR) {
+                dW = cW;
+                dH = cW / iR;
+                dX = 0;
+                dY = (cH - dH) / 2;
+            } else {
+                // On widescreen desktop, cover canvas height and width cleanly
+                dH = cH;
+                dW = cH * iR;
+                dX = (cW - dW) / 2;
+                dY = 0;
+            }
+
+            // Fill canvas with background to seamlessly blend letterbox areas
+            ctx.fillStyle = '#050a14';
+            ctx.fillRect(0, 0, cW, cH);
             ctx.drawImage(img, dX, dY, dW, dH);
         }
 
