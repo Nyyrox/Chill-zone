@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
 const galleryImages = [
-  { id: 1, src: '/Gallery/6102624597900464745.jpg', alt: 'AC Servicing Muzaffarpur' },
   { id: 2, src: '/Gallery/6102624597900464746.jpg', alt: 'Doorstep AC Repair' },
   { id: 3, src: '/Gallery/6102624597900464747.jpg', alt: 'Jet-Pump Deep Wash' },
   { id: 4, src: '/Gallery/6102624597900464748.jpg', alt: 'Outdoor Unit Servicing' },
