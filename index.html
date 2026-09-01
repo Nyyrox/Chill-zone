@@ -1,0 +1,1003 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chill Zone AC Repair Services | Best AC Repair in Muzaffarpur</title>
+    <meta name="description" content="Professional AC Repair, Servicing & Installation in Muzaffarpur. 4.9★ rated, 264+ Google reviews. Open 24/7. Call 086517 26130.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        :root {
+            --bg-white: #ffffff;
+            --bg-light: #f8f9fb;
+            --bg-section: #f2f3f7;
+            --bg-card: #ffffff;
+            --border-card: rgba(0,0,0,0.07);
+            --border-card-hover: rgba(0,0,0,0.15);
+            --shadow-card: 0 2px 16px rgba(0,0,0,0.05);
+            --shadow-card-hover: 0 8px 32px rgba(0,0,0,0.1);
+            --black: #111111;
+            --gray-900: #1f2937;
+            --gray-700: #374151;
+            --gray-500: #6b7280;
+            --gray-400: #9ca3af;
+            --gray-300: #d1d5db;
+            --gray-200: #e5e7eb;
+            --gray-100: #f3f4f6;
+            --text-primary: #111111;
+            --text-secondary: #4b5563;
+            --text-muted: #9ca3af;
+            --gold: #fbbf24;
+            --whatsapp: #25d366;
+            --font-heading: 'Poppins', sans-serif;
+            --font-body: 'Inter', sans-serif;
+            --nav-height: 72px;
+        }
+
+        *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+        html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+        body { font-family: var(--font-body); background: var(--bg-white); color: var(--text-primary); overflow-x: hidden; line-height: 1.6; }
+        a { text-decoration: none; color: inherit; }
+        img { max-width: 100%; display: block; }
+
+        /* ====== LOADER ====== */
+        #loader {
+            position: fixed; inset: 0; z-index: 10000;
+            background: var(--black);
+            display: flex; flex-direction: column; align-items: center; justify-content: center;
+            transition: opacity 0.8s ease, visibility 0.8s ease;
+        }
+        #loader.hidden { opacity: 0; visibility: hidden; pointer-events: none; }
+        .loader-logo { width: 72px; height: 72px; border-radius: 50%; object-fit: cover; margin-bottom: 24px; border: 2px solid rgba(255,255,255,0.12); }
+        .loader-bar-container { width: 200px; height: 2px; background: rgba(255,255,255,0.08); border-radius: 2px; overflow: hidden; margin-bottom: 14px; }
+        .loader-bar { height: 100%; width: 0%; background: #fff; border-radius: 2px; transition: width 0.2s ease; }
+        .loader-text { font-family: var(--font-heading); font-size: 11px; color: rgba(255,255,255,0.4); letter-spacing: 3px; text-transform: uppercase; }
+
+        /* ====== NAVBAR ====== */
+        .navbar {
+            position: fixed; top: 0; left: 0; width: 100%; height: var(--nav-height);
+            z-index: 1000; display: flex; align-items: center; justify-content: space-between;
+            padding: 0 clamp(16px, 4vw, 48px);
+            transition: background 0.5s, box-shadow 0.5s;
+        }
+        .navbar .nav-brand-text, .navbar .nav-links a, .navbar .nav-mobile-toggle { color: #fff; transition: color 0.5s; }
+        .navbar .nav-logo { border-color: rgba(255,255,255,0.25); }
+        .navbar .nav-cta { background: #fff; color: var(--black); }
+
+        .navbar.light { background: rgba(255,255,255,0.96); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); box-shadow: 0 1px 0 rgba(0,0,0,0.06); }
+        .navbar.light .nav-brand-text, .navbar.light .nav-links a, .navbar.light .nav-mobile-toggle { color: var(--text-primary); }
+        .navbar.light .nav-links a:hover { color: var(--gray-500); }
+        .navbar.light .nav-logo { border-color: rgba(0,0,0,0.1); }
+        .navbar.light .nav-cta { background: var(--black); color: #fff; }
+
+        .nav-brand { display: flex; align-items: center; gap: 10px; }
+        .nav-logo { width: 40px; height: 40px; border-radius: 50%; object-fit: cover; border: 2px solid; transition: border-color 0.5s; }
+        .nav-brand-text { font-family: var(--font-heading); font-weight: 700; font-size: 17px; }
+        .nav-links { display: flex; align-items: center; gap: 28px; list-style: none; }
+        .nav-links a { font-size: 13px; font-weight: 500; position: relative; }
+        .nav-links a::after { content:''; position: absolute; bottom: -4px; left: 0; width: 0%; height: 2px; background: currentColor; transition: width 0.3s; }
+        .nav-links a:hover::after { width: 100%; }
+        .nav-cta {
+            display: inline-flex; align-items: center; gap: 8px;
+            padding: 9px 22px; font-family: var(--font-heading); font-weight: 600; font-size: 13px;
+            border-radius: 50px; border: none; cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.3s, background 0.5s, color 0.5s;
+        }
+        .nav-cta:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,0.12); }
+        .nav-mobile-toggle { display: none; background: none; border: none; font-size: 22px; cursor: pointer; }
+
+        /* ====== HERO / ANIMATION ====== */
+        #animation-container {
+            position: relative;
+            height: 600vh; /* 5x scroll room for animation phases */
+            background: var(--black);
+        }
+
+        #hero-canvas {
+            position: sticky; top: 0; left: 0;
+            width: 100%; height: 100vh; display: block;
+        }
+
+        /* The sticky overlay that holds all text slides */
+        .hero-overlay {
+            position: sticky; top: 0; left: 0;
+            width: 100%; height: 100vh;
+            pointer-events: none; z-index: 10;
+            margin-top: -100vh;
+        }
+
+        .hero-gradient-top {
+            position: absolute; top: 0; left: 0; width: 100%; height: 160px;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.5), transparent);
+            pointer-events: none; z-index: 1;
+        }
+
+        .hero-gradient-bottom {
+            position: absolute; bottom: 0; left: 0; width: 100%; height: 260px;
+            background: linear-gradient(to top, rgba(0,0,0,0.6), transparent);
+            pointer-events: none; z-index: 1;
+        }
+
+        /* Each text slide - clean floating typography without box containers */
+        .hero-slide {
+            position: absolute; inset: 0;
+            display: flex; flex-direction: column;
+            align-items: center; justify-content: center;
+            text-align: center;
+            padding: 0 clamp(16px, 4vw, 40px);
+            padding-top: var(--nav-height);
+            opacity: 0;
+            transform: translateY(20px) scale(0.97);
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            z-index: 2;
+            pointer-events: none;
+        }
+
+        #slide1 { opacity: 1; transform: translateY(0) scale(1); }
+        .hero-slide.active { pointer-events: auto; transform: translateY(0) scale(1); }
+
+        .slide-cta-row {
+            display: flex;
+            gap: 14px;
+            margin-top: 8px;
+            flex-wrap: wrap;
+            justify-content: center;
+            pointer-events: auto;
+        }
+
+        /* -- Slide 1: Intro -- */
+        .slide1-logo {
+            width: 76px; height: 76px; border-radius: 50%; object-fit: cover;
+            border: 2px solid rgba(255,255,255,0.4); margin-bottom: 18px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.6);
+        }
+        .slide1-title {
+            font-family: var(--font-heading); font-size: clamp(32px, 5.5vw, 68px);
+            font-weight: 800; color: #fff; line-height: 1.08; margin-bottom: 12px;
+            text-shadow: 0 4px 24px rgba(0,0,0,0.8), 0 2px 8px rgba(0,0,0,0.9);
+            letter-spacing: -0.5px;
+        }
+        .slide1-sub {
+            font-size: clamp(14px, 1.8vw, 18px); color: rgba(255,255,255,0.85);
+            max-width: 500px; font-weight: 400; margin-bottom: 26px;
+            text-shadow: 0 2px 14px rgba(0,0,0,0.85);
+        }
+        .slide1-scroll {
+            display: flex; flex-direction: column; align-items: center; gap: 8px;
+            position: absolute; bottom: 32px;
+        }
+        .slide1-scroll span {
+            font-size: 10px; text-transform: uppercase; letter-spacing: 2px;
+            color: rgba(255,255,255,0.45);
+            text-shadow: 0 1px 6px rgba(0,0,0,0.8);
+        }
+        .scroll-mouse {
+            width: 20px; height: 32px; border: 2px solid rgba(255,255,255,0.4);
+            border-radius: 10px; position: relative;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.5);
+        }
+        .scroll-mouse::before {
+            content:''; position: absolute; top: 5px; left: 50%;
+            transform: translateX(-50%); width: 3px; height: 6px;
+            background: #fff; border-radius: 2px;
+            animation: scroll-dot 2s ease-in-out infinite;
+        }
+        @keyframes scroll-dot {
+            0%,100% { transform: translateX(-50%) translateY(0); opacity:1; }
+            50% { transform: translateX(-50%) translateY(9px); opacity:0.2; }
+        }
+
+        /* -- Slide 2: Rating & Stats -- */
+        .slide2-badge {
+            display: inline-flex; align-items: center; gap: 8px;
+            padding: 8px 20px; background: rgba(0,0,0,0.4);
+            border: 1px solid rgba(255,255,255,0.25); border-radius: 50px;
+            font-size: 13px; font-weight: 600; color: #fff; margin-bottom: 18px;
+            backdrop-filter: blur(8px);
+            box-shadow: 0 4px 16px rgba(0,0,0,0.4);
+        }
+        .slide2-badge i { color: var(--gold); }
+        .slide2-rating {
+            font-family: var(--font-heading); font-size: clamp(56px, 9vw, 96px);
+            font-weight: 900; color: #fff; line-height: 1;
+            text-shadow: 0 6px 32px rgba(0,0,0,0.85), 0 2px 10px rgba(0,0,0,0.9);
+        }
+        .slide2-stars { display: flex; gap: 5px; margin: 12px 0 8px; }
+        .slide2-stars i { font-size: 24px; color: var(--gold); filter: drop-shadow(0 2px 8px rgba(0,0,0,0.6)); }
+        .slide2-reviews {
+            font-size: 15px; color: rgba(255,255,255,0.8); margin-bottom: 28px;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.8); font-weight: 500;
+        }
+        .slide2-stats {
+            display: flex; align-items: center; gap: 28px; flex-wrap: wrap;
+            justify-content: center;
+        }
+        .slide2-stat {
+            display: flex; flex-direction: column; align-items: center; gap: 2px;
+        }
+        .slide2-stat-val {
+            font-family: var(--font-heading); font-size: 24px; font-weight: 800; color: #fff;
+            text-shadow: 0 3px 14px rgba(0,0,0,0.8);
+        }
+        .slide2-stat-lbl {
+            font-size: 11px; color: rgba(255,255,255,0.65);
+            text-transform: uppercase; letter-spacing: 1.5px;
+            text-shadow: 0 1px 6px rgba(0,0,0,0.8); font-weight: 600;
+        }
+        .slide2-divider { width: 1px; height: 32px; background: rgba(255,255,255,0.25); }
+
+        /* -- Slide 3: Services Teaser -- */
+        .slide3-label {
+            font-size: 12px; font-weight: 700; text-transform: uppercase;
+            letter-spacing: 3px; color: rgba(255,255,255,0.7); margin-bottom: 12px;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.8);
+        }
+        .slide3-title {
+            font-family: var(--font-heading); font-size: clamp(26px, 4.5vw, 48px);
+            font-weight: 800; color: #fff; margin-bottom: 24px; line-height: 1.15;
+            text-shadow: 0 4px 24px rgba(0,0,0,0.85);
+        }
+        .slide3-services {
+            display: flex; gap: 10px; flex-wrap: wrap; justify-content: center;
+            max-width: 620px;
+        }
+        .slide3-tag {
+            padding: 8px 18px; background: rgba(0,0,0,0.45);
+            border: 1px solid rgba(255,255,255,0.25); border-radius: 50px;
+            font-size: 13px; color: #fff; font-weight: 600;
+            backdrop-filter: blur(8px);
+            box-shadow: 0 4px 14px rgba(0,0,0,0.4);
+        }
+        .slide3-price {
+            margin-top: 24px; font-family: var(--font-heading);
+            font-size: 15px; color: rgba(255,255,255,0.8);
+            text-shadow: 0 2px 10px rgba(0,0,0,0.8);
+        }
+        .slide3-price span {
+            font-size: 32px; font-weight: 800; color: #fff;
+            text-shadow: 0 2px 16px rgba(0,0,0,0.9);
+        }
+
+        /* -- Slide 4: CTA -- */
+        .slide4-title {
+            font-family: var(--font-heading); font-size: clamp(28px, 4.8vw, 54px);
+            font-weight: 800; color: #fff; margin-bottom: 12px; line-height: 1.15;
+            text-shadow: 0 4px 24px rgba(0,0,0,0.85);
+        }
+        .slide4-sub {
+            font-size: clamp(14px, 1.6vw, 17px); color: rgba(255,255,255,0.8);
+            max-width: 480px; margin-bottom: 28px;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.8);
+        }
+        .slide4-btns {
+            display: flex; gap: 14px; flex-wrap: wrap; justify-content: center;
+            pointer-events: auto;
+        }
+        .btn-hero-primary {
+            display: inline-flex; align-items: center; gap: 10px;
+            padding: 15px 34px; background: #fff; color: var(--black);
+            font-family: var(--font-heading); font-weight: 700; font-size: 15px;
+            border-radius: 50px; border: none; cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.3s;
+            box-shadow: 0 6px 24px rgba(0,0,0,0.4);
+        }
+        .btn-hero-primary:hover { transform: translateY(-3px); box-shadow: 0 12px 32px rgba(0,0,0,0.5); }
+        .btn-hero-secondary {
+            display: inline-flex; align-items: center; gap: 10px;
+            padding: 15px 34px; background: var(--whatsapp);
+            color: #fff; font-family: var(--font-heading); font-weight: 600;
+            font-size: 15px; border-radius: 50px;
+            border: none; cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.3s;
+            box-shadow: 0 6px 24px rgba(37,211,102,0.35);
+        }
+        .btn-hero-secondary:hover { transform: translateY(-3px); box-shadow: 0 10px 28px rgba(37,211,102,0.5); }
+        .slide4-info {
+            margin-top: 18px; font-size: 13px; color: rgba(255,255,255,0.7);
+        }
+
+        /* ====== BLEND SECTION ====== */
+        .blend-section {
+            position: relative; z-index: 2;
+            height: 160px;
+            background: linear-gradient(to bottom, var(--black) 0%, var(--bg-white) 100%);
+        }
+
+        /* ====== SECTIONS ====== */
+        .section { padding: 80px clamp(16px, 5vw, 80px); position: relative; }
+        .section-header { text-align: center; margin-bottom: 56px; }
+        .section-label {
+            display: inline-flex; align-items: center; gap: 8px;
+            font-size: 11px; font-weight: 600; text-transform: uppercase;
+            letter-spacing: 3px; color: var(--gray-500); margin-bottom: 12px;
+        }
+        .section-label::before, .section-label::after {
+            content:''; width: 18px; height: 1px; background: var(--gray-300);
+        }
+        .section-title {
+            font-family: var(--font-heading); font-size: clamp(24px, 3.5vw, 40px);
+            font-weight: 700; line-height: 1.2; margin-bottom: 12px;
+        }
+        .section-desc { font-size: 14px; color: var(--text-secondary); max-width: 520px; margin: 0 auto; line-height: 1.7; }
+
+        .reveal { opacity: 0; transform: translateY(32px); transition: opacity 0.7s ease, transform 0.7s ease; }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+
+        /* ====== ABOUT ====== */
+        #about { background: var(--bg-white); }
+        .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; max-width: 1040px; margin: 0 auto; align-items: center; }
+        .about-text h3 { font-family: var(--font-heading); font-size: 24px; font-weight: 700; margin-bottom: 16px; line-height: 1.3; }
+        .about-text p { color: var(--text-secondary); font-size: 14px; margin-bottom: 12px; line-height: 1.8; }
+        .about-features { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 24px; }
+        .about-feature { display: flex; align-items: center; gap: 10px; }
+        .about-feature-icon {
+            width: 38px; height: 38px; border-radius: 10px; background: var(--gray-100);
+            display: flex; align-items: center; justify-content: center;
+            color: var(--black); font-size: 15px; flex-shrink: 0;
+        }
+        .about-feature-text { font-size: 13px; font-weight: 500; }
+        .about-stats-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+        .about-stat-card {
+            background: var(--bg-white); border: 1px solid var(--border-card);
+            border-radius: 16px; padding: 24px 16px; text-align: center;
+            transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
+        }
+        .about-stat-card:hover { border-color: var(--border-card-hover); transform: translateY(-3px); box-shadow: var(--shadow-card-hover); }
+        .about-stat-card .stat-icon {
+            width: 40px; height: 40px; border-radius: 10px; background: var(--gray-100);
+            display: flex; align-items: center; justify-content: center;
+            margin: 0 auto 12px; font-size: 18px; color: var(--black);
+        }
+        .about-stat-card .stat-number { font-family: var(--font-heading); font-size: 28px; font-weight: 800; color: var(--black); }
+        .about-stat-card .stat-label { font-size: 11px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; margin-top: 2px; }
+
+        /* ====== SERVICES ====== */
+        #services { background: var(--bg-section); }
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 16px; max-width: 1100px; margin: 0 auto; }
+        .service-card {
+            background: var(--bg-card); border: 1px solid var(--border-card);
+            border-radius: 16px; padding: 24px 20px;
+            transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
+            position: relative; overflow: hidden;
+        }
+        .service-card::before {
+            content:''; position: absolute; top: 0; left: 0; right: 0;
+            height: 3px; background: var(--black); opacity: 0; transition: opacity 0.3s;
+        }
+        .service-card:hover { border-color: var(--border-card-hover); transform: translateY(-5px); box-shadow: var(--shadow-card-hover); }
+        .service-card:hover::before { opacity: 1; }
+        .service-icon {
+            width: 46px; height: 46px; border-radius: 12px; background: var(--gray-100);
+            display: flex; align-items: center; justify-content: center;
+            font-size: 20px; color: var(--black); margin-bottom: 14px;
+        }
+        .service-card h3 { font-family: var(--font-heading); font-size: 15px; font-weight: 600; margin-bottom: 6px; }
+        .service-card p { font-size: 12px; color: var(--text-muted); margin-bottom: 14px; line-height: 1.6; }
+        .service-price { display: flex; align-items: baseline; gap: 4px; }
+        .service-price .from { font-size: 11px; color: var(--text-muted); }
+        .service-price .amount { font-family: var(--font-heading); font-size: 24px; font-weight: 700; color: var(--black); }
+        .service-price .onwards { font-size: 11px; color: var(--text-muted); }
+        .service-book-btn {
+            display: inline-flex; align-items: center; gap: 6px;
+            margin-top: 12px; padding: 8px 16px; background: var(--black);
+            border: none; border-radius: 50px; color: #fff;
+            font-size: 11px; font-weight: 600; cursor: pointer;
+            transition: background 0.3s, transform 0.2s;
+        }
+        .service-book-btn:hover { background: var(--gray-700); transform: translateY(-2px); }
+
+        /* ====== REVIEWS ====== */
+        #reviews { background: var(--bg-white); }
+        .reviews-hero { display: flex; flex-direction: column; align-items: center; margin-bottom: 48px; }
+        .reviews-rating-big { display: flex; align-items: center; gap: 16px; margin-bottom: 12px; }
+        .rating-number-big { font-family: var(--font-heading); font-size: 56px; font-weight: 800; color: var(--black); }
+        .rating-stars-big .stars { display: flex; gap: 3px; }
+        .rating-stars-big .stars i { font-size: 20px; color: var(--gold); }
+        .rating-stars-big .review-count { font-size: 12px; color: var(--text-muted); margin-top: 2px; }
+        .google-badge {
+            display: inline-flex; align-items: center; gap: 7px;
+            padding: 7px 16px; background: var(--gray-100); border: 1px solid var(--border-card);
+            border-radius: 50px; font-size: 12px; color: var(--text-secondary); font-weight: 500;
+        }
+        .reviews-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 16px; max-width: 1040px; margin: 0 auto; }
+        .review-card {
+            background: var(--bg-card); border: 1px solid var(--border-card);
+            border-radius: 16px; padding: 24px;
+            transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
+        }
+        .review-card:hover { border-color: var(--border-card-hover); transform: translateY(-3px); box-shadow: var(--shadow-card-hover); }
+        .review-header { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; }
+        .review-avatar {
+            width: 40px; height: 40px; border-radius: 50%; background: var(--black);
+            display: flex; align-items: center; justify-content: center;
+            font-family: var(--font-heading); font-weight: 700; font-size: 16px; color: #fff; flex-shrink: 0;
+        }
+        .review-author { font-family: var(--font-heading); font-weight: 600; font-size: 14px; }
+        .review-meta { display: flex; align-items: center; gap: 6px; margin-top: 2px; }
+        .review-stars { display: flex; gap: 2px; }
+        .review-stars i { font-size: 11px; color: var(--gold); }
+        .review-date { font-size: 11px; color: var(--text-muted); }
+        .review-text { font-size: 13px; color: var(--text-secondary); line-height: 1.7; }
+        .review-text::before { content:'\201C'; font-size: 22px; color: var(--gray-300); font-family: Georgia, serif; line-height: 0; vertical-align: -5px; margin-right: 3px; }
+        .reviews-cta { text-align: center; margin-top: 40px; }
+        .btn-outline {
+            display: inline-flex; align-items: center; gap: 8px;
+            padding: 12px 24px; background: transparent; color: var(--text-primary);
+            font-family: var(--font-heading); font-weight: 600; font-size: 13px;
+            border-radius: 50px; border: 1.5px solid var(--gray-300); cursor: pointer;
+            transition: transform 0.2s, border-color 0.3s, background 0.3s;
+        }
+        .btn-outline:hover { transform: translateY(-2px); border-color: var(--black); background: var(--gray-100); }
+
+        /* ====== CONTACT ====== */
+        #contact { background: var(--bg-section); }
+        .contact-wrapper { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; max-width: 1040px; margin: 0 auto; }
+        .contact-info { display: flex; flex-direction: column; gap: 20px; }
+        .contact-info h3 { font-family: var(--font-heading); font-size: 24px; font-weight: 700; margin-bottom: 2px; }
+        .contact-info > p { color: var(--text-secondary); font-size: 14px; line-height: 1.7; }
+        .contact-item { display: flex; align-items: flex-start; gap: 12px; }
+        .contact-item-icon {
+            width: 42px; height: 42px; border-radius: 12px; background: var(--bg-white);
+            border: 1px solid var(--border-card); display: flex; align-items: center;
+            justify-content: center; color: var(--black); font-size: 16px; flex-shrink: 0;
+        }
+        .contact-item-text .label { font-size: 10px; text-transform: uppercase; letter-spacing: 1px; color: var(--text-muted); margin-bottom: 2px; }
+        .contact-item-text .value { font-size: 14px; font-weight: 500; }
+        .contact-item-text .value a { color: var(--text-primary); border-bottom: 1px solid var(--gray-300); transition: border-color 0.3s; }
+        .contact-item-text .value a:hover { border-color: var(--black); }
+        .contact-buttons { display: flex; gap: 10px; margin-top: 6px; flex-wrap: wrap; }
+        .contact-btn {
+            display: inline-flex; align-items: center; gap: 8px;
+            padding: 12px 24px; border-radius: 50px; font-family: var(--font-heading);
+            font-weight: 600; font-size: 13px; cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.3s; border: none;
+        }
+        .contact-btn.call { background: var(--black); color: #fff; }
+        .contact-btn.whatsapp { background: var(--whatsapp); color: #fff; }
+        .contact-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,0.12); }
+        .contact-map { border-radius: 16px; overflow: hidden; border: 1px solid var(--border-card); min-height: 360px; box-shadow: var(--shadow-card); }
+        .contact-map iframe { width: 100%; height: 100%; min-height: 360px; border: none; }
+
+        /* ====== FOOTER ====== */
+        .footer { background: var(--black); color: #fff; padding: 40px clamp(16px, 5vw, 80px) 20px; }
+        .footer-top {
+            display: flex; justify-content: space-between; align-items: flex-start;
+            max-width: 1040px; margin: 0 auto; padding-bottom: 24px;
+            border-bottom: 1px solid rgba(255,255,255,0.08); flex-wrap: wrap; gap: 24px;
+        }
+        .footer-brand { display: flex; align-items: center; gap: 10px; }
+        .footer-brand img { width: 40px; height: 40px; border-radius: 50%; object-fit: cover; }
+        .footer-brand-info h4 { font-family: var(--font-heading); font-weight: 700; font-size: 14px; margin-bottom: 2px; }
+        .footer-brand-info p { font-size: 11px; color: rgba(255,255,255,0.45); }
+        .footer-links { display: flex; gap: 24px; }
+        .footer-links a { font-size: 12px; color: rgba(255,255,255,0.55); transition: color 0.3s; }
+        .footer-links a:hover { color: #fff; }
+        .footer-bottom { text-align: center; padding-top: 16px; max-width: 1040px; margin: 0 auto; }
+        .footer-bottom p { font-size: 11px; color: rgba(255,255,255,0.3); }
+
+        /* ====== WHATSAPP FLOAT ====== */
+        .whatsapp-float {
+            position: fixed; bottom: 20px; right: 20px; z-index: 999;
+            width: 52px; height: 52px; border-radius: 50%; background: var(--whatsapp);
+            display: flex; align-items: center; justify-content: center;
+            font-size: 24px; color: #fff;
+            box-shadow: 0 3px 12px rgba(37,211,102,0.35); cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+            animation: wa-pulse 3s ease-in-out infinite;
+        }
+        .whatsapp-float:hover { transform: scale(1.1); box-shadow: 0 5px 20px rgba(37,211,102,0.5); }
+        @keyframes wa-pulse {
+            0%,100% { box-shadow: 0 3px 12px rgba(37,211,102,0.35); }
+            50% { box-shadow: 0 3px 12px rgba(37,211,102,0.35), 0 0 0 8px rgba(37,211,102,0.07); }
+        }
+
+        /* ====== RESPONSIVE ====== */
+        @media (max-width: 1024px) {
+            .about-grid { grid-template-columns: 1fr; gap: 32px; }
+            .contact-wrapper { grid-template-columns: 1fr; }
+        }
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none; position: fixed; top: var(--nav-height);
+                left: 0; right: 0; background: rgba(255,255,255,0.98);
+                backdrop-filter: blur(20px); flex-direction: column;
+                padding: 16px; gap: 14px; border-bottom: 1px solid var(--border-card);
+            }
+            .nav-links.open { display: flex; }
+            .nav-links.open a { color: var(--text-primary) !important; }
+            .nav-mobile-toggle { display: block; }
+            .nav-cta { display: none; }
+
+            .slide-backdrop { padding: 22px 18px; border-radius: 20px; max-width: 90%; }
+            .slide-cta-row { gap: 8px; }
+            .slide1-logo { width: 52px; height: 52px; margin-bottom: 12px; }
+            .slide1-title { font-size: 26px; }
+            .slide1-sub { font-size: 13px; margin-bottom: 16px; }
+            .slide1-scroll { bottom: 18px; }
+            .slide2-rating { font-size: 52px; }
+            .slide2-stats { gap: 14px; }
+            .slide2-divider { display: none; }
+            .slide3-title { font-size: 20px; }
+            .slide3-services { gap: 6px; }
+            .slide3-tag { font-size: 11px; padding: 5px 12px; }
+            .slide4-title { font-size: 22px; }
+            .slide4-btns { flex-direction: column; align-items: center; width: 100%; }
+            .slide4-btns .btn-hero-primary, .slide4-btns .btn-hero-secondary { width: 100%; justify-content: center; }
+
+            .about-features { grid-template-columns: 1fr; }
+            .services-grid { grid-template-columns: 1fr; }
+            .reviews-grid { grid-template-columns: 1fr; }
+            .rating-number-big { font-size: 44px; }
+            .contact-buttons { flex-direction: column; }
+            .footer-top { flex-direction: column; align-items: center; text-align: center; }
+            .footer-links { flex-wrap: wrap; justify-content: center; }
+        }
+        @media (max-width: 400px) {
+            .slide1-title { font-size: 24px; }
+            .slide2-rating { font-size: 44px; }
+            .slide4-title { font-size: 22px; }
+            .about-stats-grid { grid-template-columns: 1fr; }
+            .section { padding: 60px 16px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- LOADER -->
+    <div id="loader">
+        <img src="logo image to be used.jpg" alt="Chill Zone" class="loader-logo">
+        <div class="loader-bar-container"><div class="loader-bar" id="loader-bar"></div></div>
+        <p class="loader-text" id="loader-text">Loading 0%</p>
+    </div>
+
+    <!-- NAVBAR -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-brand">
+            <img src="logo image to be used.jpg" alt="Chill Zone" class="nav-logo">
+            <span class="nav-brand-text">Chill Zone</span>
+        </div>
+        <ul class="nav-links" id="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#reviews">Reviews</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <a href="tel:+918651726130" class="nav-cta"><i class="fas fa-phone"></i> Call Now</a>
+        <button class="nav-mobile-toggle" id="nav-toggle" aria-label="Menu"><i class="fas fa-bars"></i></button>
+    </nav>
+
+    <!-- HERO ANIMATION -->
+    <div id="animation-container">
+        <canvas id="hero-canvas"></canvas>
+        <div class="hero-overlay" id="hero-overlay">
+            <div class="hero-gradient-top"></div>
+            <div class="hero-gradient-bottom"></div>
+
+            <!-- SLIDE 1: Brand Intro (Visible on load) -->
+            <div class="hero-slide" id="slide1">
+                <img src="logo image to be used.jpg" alt="Chill Zone" class="slide1-logo">
+                <h1 class="slide1-title">Chill Zone<br>Repair Service</h1>
+                <p class="slide1-sub">Expert AC Repair, Servicing & Installation in Muzaffarpur</p>
+                <div class="slide-cta-row">
+                    <a href="tel:+918651726130" class="btn-hero-primary"><i class="fas fa-phone"></i> Call Now</a>
+                    <a href="https://wa.me/918651726130?text=Hi%20Chill%20Zone%2C%20I%20need%20AC%20repair%20service" target="_blank" class="btn-hero-secondary"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                </div>
+                <div class="slide1-scroll">
+                    <div class="scroll-mouse"></div>
+                    <span>Scroll to explore</span>
+                </div>
+            </div>
+
+            <!-- SLIDE 2: Rating & Stats -->
+            <div class="hero-slide" id="slide2">
+                <div class="slide2-badge"><i class="fas fa-star"></i> Google Verified Business</div>
+                <div class="slide2-rating">4.9</div>
+                <div class="slide2-stars">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                </div>
+                <p class="slide2-reviews">Based on 264+ Google Reviews</p>
+                <div class="slide2-stats">
+                    <div class="slide2-stat">
+                        <span class="slide2-stat-val">24/7</span>
+                        <span class="slide2-stat-lbl">Open Hours</span>
+                    </div>
+                    <div class="slide2-divider"></div>
+                    <div class="slide2-stat">
+                        <span class="slide2-stat-val">264+</span>
+                        <span class="slide2-stat-lbl">Happy Clients</span>
+                    </div>
+                    <div class="slide2-divider"></div>
+                    <div class="slide2-stat">
+                        <span class="slide2-stat-val">Doorstep</span>
+                        <span class="slide2-stat-lbl">Fast Service</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SLIDE 3: Services Teaser -->
+            <div class="hero-slide" id="slide3">
+                <p class="slide3-label">Our Services & Pricing</p>
+                <h2 class="slide3-title">Fast & Affordable AC Care</h2>
+                <div class="slide3-services">
+                    <span class="slide3-tag">Inspection ₹399</span>
+                    <span class="slide3-tag">Jet-Pump Service ₹599</span>
+                    <span class="slide3-tag">Gas Refill + Leak ₹3000</span>
+                    <span class="slide3-tag">Installation ₹1299</span>
+                    <span class="slide3-tag">Uninstallation ₹699</span>
+                </div>
+                <p class="slide3-price">Starting from only <span>₹399</span></p>
+            </div>
+
+            <!-- SLIDE 4: CTA -->
+            <div class="hero-slide" id="slide4">
+                <h2 class="slide4-title">Cool Comfort,<br>Just One Call Away</h2>
+                <p class="slide4-sub">Fast doorstep AC service across Muzaffarpur and nearby areas. Available 24 hours.</p>
+                <div class="slide4-btns">
+                    <a href="tel:+918651726130" class="btn-hero-primary"><i class="fas fa-phone"></i> Contact Now</a>
+                    <a href="https://wa.me/918651726130?text=Hi%20Chill%20Zone%2C%20I%20need%20AC%20repair%20service" target="_blank" class="btn-hero-secondary"><i class="fab fa-whatsapp"></i> WhatsApp Us</a>
+                </div>
+                <p class="slide4-info"><i class="fas fa-map-marker-alt"></i> Majhaulia Rd, Gobarsahi, Muzaffarpur</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- BLEND -->
+    <div class="blend-section"></div>
+
+    <!-- ABOUT -->
+    <section id="about" class="section">
+        <div class="section-header reveal">
+            <p class="section-label">About Us</p>
+            <h2 class="section-title">Why Choose Chill Zone?</h2>
+            <p class="section-desc">Muzaffarpur's most trusted AC repair service — professional, affordable, and fast doorstep solutions.</p>
+        </div>
+        <div class="about-grid">
+            <div class="about-text reveal">
+                <h3>Your Trusted Partner for All AC & Appliance Needs</h3>
+                <p>Chill Zone AC Repair Services in Muzaffarpur offers professional AC repair, best-in-class AC servicing, and expert AC installation with fast doorstep support.</p>
+                <p>Whether your AC isn't cooling, needs gas refilling, or requires installation — our certified technicians are just one call away, 24/7.</p>
+                <div class="about-features">
+                    <div class="about-feature"><div class="about-feature-icon"><i class="fas fa-bolt"></i></div><span class="about-feature-text">Fast Response</span></div>
+                    <div class="about-feature"><div class="about-feature-icon"><i class="fas fa-home"></i></div><span class="about-feature-text">Doorstep Service</span></div>
+                    <div class="about-feature"><div class="about-feature-icon"><i class="fas fa-certificate"></i></div><span class="about-feature-text">Certified Techs</span></div>
+                    <div class="about-feature"><div class="about-feature-icon"><i class="fas fa-tags"></i></div><span class="about-feature-text">Affordable Prices</span></div>
+                </div>
+            </div>
+            <div class="about-stats-grid reveal">
+                <div class="about-stat-card"><div class="stat-icon"><i class="fas fa-star"></i></div><div class="stat-number">4.9</div><div class="stat-label">Google Rating</div></div>
+                <div class="about-stat-card"><div class="stat-icon"><i class="fas fa-users"></i></div><div class="stat-number">264+</div><div class="stat-label">Happy Customers</div></div>
+                <div class="about-stat-card"><div class="stat-icon"><i class="fas fa-clock"></i></div><div class="stat-number">24/7</div><div class="stat-label">Service Hours</div></div>
+                <div class="about-stat-card"><div class="stat-icon"><i class="fas fa-map-marker-alt"></i></div><div class="stat-number">Bihar</div><div class="stat-label">Area Served</div></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="services" class="section">
+        <div class="section-header reveal">
+            <p class="section-label">Our Services</p>
+            <h2 class="section-title">Professional Services at Best Prices</h2>
+            <p class="section-desc">Transparent pricing, certified technicians, and guaranteed satisfaction on every job.</p>
+        </div>
+        <div class="services-grid">
+            <!-- 1. Diagnostics & inspection -->
+            <div class="service-card reveal">
+                <div class="service-icon"><i class="fas fa-search-plus"></i></div>
+                <h3>Diagnostics & Inspection</h3>
+                <p>Complete checkup of electricals, cooling performance, wiring, and diagnosis of any AC issue.</p>
+                <div class="service-price">
+                    <span class="from">Price</span>
+                    <span class="amount">₹399</span>
+                    <span class="onwards">only</span>
+                </div>
+                <a href="https://wa.me/918651726130?text=Hi%2C%20I%20need%20Diagnostics%20%26%20Inspection%20service" target="_blank" class="service-book-btn">
+                    <i class="fab fa-whatsapp"></i> Book Now
+                </a>
+            </div>
+
+            <!-- 2. Jet-pump deep servicing -->
+            <div class="service-card reveal">
+                <div class="service-icon"><i class="fas fa-shower"></i></div>
+                <h3>Jet-Pump Deep Servicing</h3>
+                <p>High-pressure jet wash cleaning for indoor/outdoor coils, blower, tray, and air filters.</p>
+                <div class="service-price">
+                    <span class="from">Price</span>
+                    <span class="amount">₹599</span>
+                    <span class="onwards">only</span>
+                </div>
+                <a href="https://wa.me/918651726130?text=Hi%2C%20I%20need%20Jet-Pump%20Deep%20Servicing" target="_blank" class="service-book-btn">
+                    <i class="fab fa-whatsapp"></i> Book Now
+                </a>
+            </div>
+
+            <!-- 3. Full Gas Refilling + Leak check -->
+            <div class="service-card reveal">
+                <div class="service-icon"><i class="fas fa-wind"></i></div>
+                <h3>Full Gas Refilling + Leak Check</h3>
+                <p>Thorough nitrogen pressure leak test, brazing repairs, and 100% genuine gas recharge (R22/R32/R410).</p>
+                <div class="service-price">
+                    <span class="from">Price</span>
+                    <span class="amount">₹3,000</span>
+                    <span class="onwards">only</span>
+                </div>
+                <a href="https://wa.me/918651726130?text=Hi%2C%20I%20need%20Full%20Gas%20Refilling%20%2B%20Leak%20Check" target="_blank" class="service-book-btn">
+                    <i class="fab fa-whatsapp"></i> Book Now
+                </a>
+            </div>
+
+            <!-- 4. AC installation -->
+            <div class="service-card reveal">
+                <div class="service-icon"><i class="fas fa-tools"></i></div>
+                <h3>AC Installation</h3>
+                <p>Expert split & window AC installation with precision bracket mounting and secure piping connection.</p>
+                <div class="service-price">
+                    <span class="from">Price</span>
+                    <span class="amount">₹1,299</span>
+                    <span class="onwards">only</span>
+                </div>
+                <a href="https://wa.me/918651726130?text=Hi%2C%20I%20need%20AC%20Installation" target="_blank" class="service-book-btn">
+                    <i class="fab fa-whatsapp"></i> Book Now
+                </a>
+            </div>
+
+            <!-- 5. AC Uninstallation -->
+            <div class="service-card reveal">
+                <div class="service-icon"><i class="fas fa-box-open"></i></div>
+                <h3>AC Uninstallation</h3>
+                <p>Safe uninstallation with gas lock-in technique, pipe detachment, and bracket removal without damage.</p>
+                <div class="service-price">
+                    <span class="from">Price</span>
+                    <span class="amount">₹699</span>
+                    <span class="onwards">only</span>
+                </div>
+                <a href="https://wa.me/918651726130?text=Hi%2C%20I%20need%20AC%20Uninstallation" target="_blank" class="service-book-btn">
+                    <i class="fab fa-whatsapp"></i> Book Now
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- REVIEWS -->
+    <section id="reviews" class="section">
+        <div class="section-header reveal">
+            <p class="section-label">Customer Reviews</p>
+            <h2 class="section-title">Trusted by 264+ Customers</h2>
+            <p class="section-desc">Hear what our happy customers say about Chill Zone AC Repair Services.</p>
+        </div>
+        <div class="reviews-hero reveal">
+            <div class="reviews-rating-big">
+                <span class="rating-number-big">4.9</span>
+                <div class="rating-stars-big">
+                    <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></div>
+                    <span class="review-count">Based on 264 Google reviews</span>
+                </div>
+            </div>
+            <div class="google-badge">
+                <svg viewBox="0 0 24 24" width="16" height="16"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
+                Reviews on Google
+            </div>
+        </div>
+        <div class="reviews-grid">
+            <div class="review-card reveal"><div class="review-header"><div class="review-avatar">R</div><div><div class="review-author">Rohan Kumar</div><div class="review-meta"><div class="review-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><span class="review-date">Recent</span></div></div></div><p class="review-text">Good work quality and great experience overall. Cooling improved immediately!</p></div>
+            <div class="review-card reveal"><div class="review-header"><div class="review-avatar">A</div><div><div class="review-author">Avinish Sharma</div><div class="review-meta"><div class="review-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><span class="review-date">Recent</span></div></div></div><p class="review-text">Good service, timely response and very helpful people. Highly recommended.</p></div>
+            <div class="review-card reveal"><div class="review-header"><div class="review-avatar">M</div><div><div class="review-author">Mahfooz Alam</div><div class="review-meta"><div class="review-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><span class="review-date">Owner</span></div></div></div><p class="review-text">Committed to providing the best AC repair in Muzaffarpur with doorstep support and affordable prices.</p></div>
+        </div>
+        <div class="reviews-cta reveal">
+            <a href="https://www.google.com/maps/place/Chill+Zone+AC+Repair+Services+In+Muzaffarpur/" target="_blank" class="btn-outline"><i class="fab fa-google"></i> View All Google Reviews</a>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section">
+        <div class="section-header reveal">
+            <p class="section-label">Get In Touch</p>
+            <h2 class="section-title">Contact Chill Zone</h2>
+            <p class="section-desc">Available 24/7 for all your AC repair, servicing, and installation needs.</p>
+        </div>
+        <div class="contact-wrapper">
+            <div class="contact-info reveal">
+                <h3>Let's Fix Your AC Today!</h3>
+                <p>Call us anytime or WhatsApp for quick booking. Fast doorstep service across Muzaffarpur and nearby areas.</p>
+                <div class="contact-item"><div class="contact-item-icon"><i class="fas fa-phone-alt"></i></div><div class="contact-item-text"><div class="label">Phone</div><div class="value"><a href="tel:+918651726130">086517 26130</a></div></div></div>
+                <div class="contact-item"><div class="contact-item-icon"><i class="fab fa-whatsapp"></i></div><div class="contact-item-text"><div class="label">WhatsApp</div><div class="value"><a href="https://wa.me/918651726130" target="_blank">086517 26130</a></div></div></div>
+                <div class="contact-item"><div class="contact-item-icon"><i class="fas fa-map-marker-alt"></i></div><div class="contact-item-text"><div class="label">Address</div><div class="value">Majhaulia Rd, near Idea Tower,<br>Gobarsahi, Muzaffarpur, Bihar 843113</div></div></div>
+                <div class="contact-item"><div class="contact-item-icon"><i class="fas fa-clock"></i></div><div class="contact-item-text"><div class="label">Business Hours</div><div class="value">Open 24 Hours — 7 Days a Week</div></div></div>
+                <div class="contact-buttons">
+                    <a href="tel:+918651726130" class="contact-btn call"><i class="fas fa-phone-alt"></i> Call Now</a>
+                    <a href="https://wa.me/918651726130?text=Hi%20Chill%20Zone%2C%20I%20need%20AC%20repair%20service" target="_blank" class="contact-btn whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                </div>
+            </div>
+            <div class="contact-map reveal">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3583.2!2d85.3909!3d26.1209!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjbCsDA3JzE1LjIiTiA4NcKwMjMnMjcuMiJF!5e0!3m2!1sen!2sin!4v1" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-top">
+            <div class="footer-brand"><img src="logo image to be used.jpg" alt="Chill Zone"><div class="footer-brand-info"><h4>Chill Zone AC Repair Services</h4><p>Best AC Repair in Muzaffarpur, Bihar</p></div></div>
+            <div class="footer-links"><a href="#about">About</a><a href="#services">Services</a><a href="#reviews">Reviews</a><a href="#contact">Contact</a></div>
+        </div>
+        <div class="footer-bottom"><p>&copy; 2025 Chill Zone AC Repair Services In Muzaffarpur. All rights reserved.</p></div>
+    </footer>
+
+    <!-- WHATSAPP FLOAT -->
+    <a href="https://wa.me/918651726130?text=Hi%20Chill%20Zone%2C%20I%20need%20AC%20repair%20service" target="_blank" class="whatsapp-float" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+
+    <script>
+    (function() {
+        'use strict';
+
+        const FRAME_COUNT = 240;
+        const FRAME_PATH = 'bg-animation-image/ezgif-frame-';
+
+        const canvas = document.getElementById('hero-canvas');
+        const ctx = canvas.getContext('2d');
+        const animContainer = document.getElementById('animation-container');
+        const loader = document.getElementById('loader');
+        const loaderBar = document.getElementById('loader-bar');
+        const loaderText = document.getElementById('loader-text');
+        const navbar = document.getElementById('navbar');
+        const navToggle = document.getElementById('nav-toggle');
+        const navLinks = document.getElementById('nav-links');
+
+        // Slide elements
+        const slide1 = document.getElementById('slide1');
+        const slide2 = document.getElementById('slide2');
+        const slide3 = document.getElementById('slide3');
+        const slide4 = document.getElementById('slide4');
+
+        // ====== PRELOAD ======
+        const images = new Array(FRAME_COUNT);
+        let loadedCount = 0;
+        let allLoaded = false;
+
+        function pad(n) { return String(n).padStart(3, '0'); }
+
+        function drawFrame(img) {
+            if (!img || !img.complete || img.naturalWidth <= 0) return;
+            const iR = img.naturalWidth / img.naturalHeight;
+            const cR = cW / cH;
+            let dW, dH, dX, dY;
+            if (cR > iR) { dW = cW; dH = cW / iR; dX = 0; dY = (cH - dH) / 2; }
+            else { dH = cH; dW = cH * iR; dX = (cW - dW) / 2; dY = 0; }
+            ctx.clearRect(0, 0, cW, cH);
+            ctx.drawImage(img, dX, dY, dW, dH);
+        }
+
+        function onLoad() {
+            loadedCount++;
+            const pct = Math.round((loadedCount / FRAME_COUNT) * 100);
+            loaderBar.style.width = pct + '%';
+            loaderText.textContent = 'Loading ' + pct + '%';
+
+            // Draw first frame right away when ready
+            if (loadedCount === 1 || images[0].complete) {
+                drawFrame(images[0]);
+            }
+
+            if (loadedCount === FRAME_COUNT) {
+                allLoaded = true;
+                setTimeout(() => {
+                    loader.classList.add('hidden');
+                    requestAnimationFrame(render);
+                }, 300);
+            }
+        }
+
+        for (let i = 0; i < FRAME_COUNT; i++) {
+            const img = new Image();
+            img.onload = onLoad;
+            img.onerror = onLoad;
+            img.src = FRAME_PATH + pad(i + 1) + '.jpg';
+            images[i] = img;
+        }
+
+        // ====== RENDERING ======
+        let currentFrame = -1;
+        let cW, cH;
+
+        function resizeCanvas() {
+            cW = canvas.width = window.innerWidth;
+            cH = canvas.height = window.innerHeight;
+            currentFrame = -1;
+        }
+
+        function getProgress() {
+            const rect = animContainer.getBoundingClientRect();
+            const total = rect.height - window.innerHeight;
+            return Math.max(0, Math.min(1, -rect.top / total));
+        }
+
+        /* Slide visibility ranges (as fraction of total scroll through animation)
+         * Each slide has: fadeIn start, peak start, peak end, fadeOut end
+         */
+        function computeSlideOpacity(progress, inStart, inEnd, outStart, outEnd) {
+            if (progress < inStart || progress > outEnd) return 0;
+            if (progress >= inEnd && progress <= outStart) return 1;
+            if (progress < inEnd) return (progress - inStart) / (inEnd - inStart);
+            return 1 - (progress - outStart) / (outEnd - outStart);
+        }
+
+        function render() {
+            if (!allLoaded) { requestAnimationFrame(render); return; }
+
+            const p = getProgress();
+            const fi = Math.min(FRAME_COUNT - 1, Math.floor(p * (FRAME_COUNT - 1)));
+
+            if (fi !== currentFrame) {
+                currentFrame = fi;
+                drawFrame(images[fi]);
+            }
+
+            // Slide opacities with smooth cross-fade (Slide 1 is 100% visible on page load)
+            const o1 = computeSlideOpacity(p, -0.10, 0.00, 0.15, 0.23);
+            const o2 = computeSlideOpacity(p, 0.18, 0.26, 0.40, 0.48);
+            const o3 = computeSlideOpacity(p, 0.43, 0.51, 0.65, 0.73);
+            const o4 = computeSlideOpacity(p, 0.68, 0.76, 0.90, 0.98);
+
+            slide1.style.opacity = o1;
+            slide2.style.opacity = o2;
+            slide3.style.opacity = o3;
+            slide4.style.opacity = o4;
+
+            // Enable pointer events & subtle motion transform on active slide
+            slide1.classList.toggle('active', o1 > 0.05);
+            slide2.classList.toggle('active', o2 > 0.05);
+            slide3.classList.toggle('active', o3 > 0.05);
+            slide4.classList.toggle('active', o4 > 0.05);
+
+            requestAnimationFrame(render);
+        }
+
+        resizeCanvas();
+        requestAnimationFrame(render);
+
+        // ====== NAVBAR ======
+        function handleNav() {
+            const animBottom = animContainer.getBoundingClientRect().bottom;
+            if (animBottom <= window.innerHeight + 100) {
+                navbar.classList.add('light');
+            } else {
+                navbar.classList.remove('light');
+            }
+        }
+        window.addEventListener('scroll', handleNav, { passive: true });
+
+        navToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('open');
+            const i = navToggle.querySelector('i');
+            i.classList.toggle('fa-bars');
+            i.classList.toggle('fa-times');
+        });
+        navLinks.querySelectorAll('a').forEach(l => l.addEventListener('click', () => {
+            navLinks.classList.remove('open');
+            const i = navToggle.querySelector('i');
+            i.classList.add('fa-bars');
+            i.classList.remove('fa-times');
+        }));
+
+        // ====== SCROLL REVEAL ======
+        const obs = new IntersectionObserver(entries => {
+            entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('active'); });
+        }, { threshold: 0.08, rootMargin: '0px 0px -20px 0px' });
+        document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+        // ====== SMOOTH SCROLL ======
+        document.querySelectorAll('a[href^="#"]').forEach(a => {
+            a.addEventListener('click', function(e) {
+                e.preventDefault();
+                const t = document.querySelector(this.getAttribute('href'));
+                if (t) window.scrollTo({ top: t.getBoundingClientRect().top + window.scrollY - 72, behavior: 'smooth' });
+            });
+        });
+
+        window.addEventListener('resize', resizeCanvas, { passive: true });
+    })();
+    </script>
+</body>
+</html>
