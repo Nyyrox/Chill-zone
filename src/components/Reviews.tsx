@@ -48,8 +48,8 @@ const reviewsData: ReviewItem[] = [
     id: 6,
     author: 'Mahfooz Alam',
     avatar: 'M',
-    location: 'Owner, Chill Zone',
-    text: 'Committed to providing the best, most transparent AC repair in Muzaffarpur with 24/7 doorstep support and genuine spare parts.'
+    location: 'Brahmpura, Muzaffarpur',
+    text: 'Very professional and fast doorstep service. The technician arrived on time and restored our AC cooling completely at very affordable rates.'
   }
 ];
 
